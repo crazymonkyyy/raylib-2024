@@ -1,0 +1,1 @@
+dmd -I./raylib -I./monkyyylib -L-lraylib -i -run examples/001-helloworld.d
