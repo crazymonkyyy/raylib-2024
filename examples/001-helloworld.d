@@ -2,7 +2,7 @@ module helloworld; //make error go away worthless code
 import basic;//using namespace std / import std for this enverment
 mixin mainhack!();
 void main_(){// hack for making swapping between wasm and native work
-	//validateRaylibBinding();
+	validateRaylibBinding();
 	InitWindow(800, 640, "Hello, World!");
 	SetTargetFPS(60);
 	while (!WindowShouldClose()){

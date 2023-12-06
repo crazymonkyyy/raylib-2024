@@ -2,7 +2,10 @@ module raymathext;
 
 import raylib;
 //BAD: TODO:
-//import core.stdc.math:cos,sin,atan2,sqrt;
+version(D_BetterC){
+}else{
+	import core.stdc.math:cos,sin,atan2,sqrt;
+}
 import std.traits : FieldNameTuple;
 
 pragma(inline, true):
