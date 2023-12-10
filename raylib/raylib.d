@@ -174,12 +174,34 @@ extern (D) auto CLITERAL(T)(auto ref T type)
 // Matrix fourth row (4 components)
 
 // Color, 4 components, R8G8B8A8 (32bit)
-struct Color
-{
-    ubyte r; // Color red value
-    ubyte g; // Color green value
-    ubyte b; // Color blue value
-    ubyte a; // Color alpha value
+struct Color{
+	ubyte r; // Color red value
+	ubyte g; // Color green value
+	ubyte b; // Color blue value
+	ubyte a=255; // Color alpha value
+	this(string s){
+		import std;
+		if(s[0..2]=="0x"){
+			s = s[2..$];
+		}
+		if(s[0..1]=="#"){
+			s = s[1..$];
+		}
+		if(s.length >= 6){
+			r = s[0..2].to!ubyte(16);
+			g = s[2..4].to!ubyte(16);
+			b = s[4..6].to!ubyte(16);
+		}
+		if(s.length >= 8){
+			a = s[6..8].to!ubyte(16);
+		}
+	}
+	this(T)(T r,T g,T b,T a=255){
+		this.r=cast(ubyte)(r%256);
+		this.g=cast(ubyte)(g%256);
+		this.b=cast(ubyte)(b%256);
+		this.a=cast(ubyte)(a%256);
+	}
 }
 
 // Rectangle, 4 components

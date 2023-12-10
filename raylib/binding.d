@@ -20,7 +20,7 @@ import raylib;
  * linker errors. (raylib-d unittests do not test the C binding)
  */
 version(raylib_test) {} else
-void validateRaylibBinding() @nogc nothrow {
+void validateRaylibBinding()() @nogc nothrow {
     import core.stdc.stdio;
     import core.stdc.stdlib;
     import core.stdc.string;

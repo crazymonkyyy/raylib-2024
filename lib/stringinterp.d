@@ -70,3 +70,20 @@ string interp(string s,string[string] env){
 //		"bar":"2",
 //	]).writeln;
 //}
+void main(string[] s){
+	import std;
+	string file=s[1];
+	string pattern=s[2..$].join(' ').replace('%','$');
+	pattern.writeln;
+	auto csv=File(file).byLineCopy.map!(a=>a.split(',').array);
+	string[] header=csv.front;
+	csv.popFront;
+	foreach(vs;csv){
+		string[string] store;
+		foreach(string v,string h;zip(vs,header)){
+			store[h]=v;
+		}
+		//store.writeln;
+		pattern.interp(store).writeln;
+	}
+}

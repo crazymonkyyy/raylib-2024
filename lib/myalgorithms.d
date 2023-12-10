@@ -27,3 +27,10 @@ auto mixinmap(string front_,string body_="",R,Args...)(R r,Args args){
 	}
 	return range(r,0,args);
 }
+auto lastindex(R,E)(R r,E e){
+	int o=-1;
+	foreach(i,e_;r){
+		if(e==e_){o=cast(int)i;}
+	}
+	return o;
+}

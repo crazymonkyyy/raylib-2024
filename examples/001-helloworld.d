@@ -7,8 +7,8 @@ void main_(){// hack for making swapping between wasm and native work
 	SetTargetFPS(60);
 	while (!WindowShouldClose()){
 		BeginDrawing();
-		ClearBackground(Colors.RAYWHITE);//TODO not raycolors
-		DrawText("Hello, 5.0 raylib", 330, 300, 28, Colors.BLACK);
+		ClearBackground(Color("ffffff"));//TODO not raycolors
+		DrawText("Hello, 5.0 raylib", 330, 300, 28, Color("dc322f"));
 		EndDrawing();
 	}
 	CloseWindow();
