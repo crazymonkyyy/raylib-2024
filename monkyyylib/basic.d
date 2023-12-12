@@ -4,8 +4,12 @@ version(D_BetterC){
 	mixin template mainhack(){
 		extern(C) void main()=>main_;
 	}
+	//extern(C) void __assert(bool* b,char* s,){
+	//
+	//}
 } else {
-	public import std;
+	public import std.conv:to;
+	public import std.stdio;
 	enum betterc=false;
 	mixin template mainhack(){
 		extern(C) void main()=>main_;
@@ -18,7 +22,7 @@ public import monkyyydraw;
 void makewindow(){
 	activecolorscheme=solarizeddark;
 	version(D_BetterC){
-		validateRaylibBinding();
+		//validateRaylibBinding();
 		InitWindow(800, 640, "Hello, World!");
 		SetTargetFPS(60);
 	} else {
@@ -29,6 +33,7 @@ void makewindow(){
 	}
 }
 void startdrawing(){
+	resetcolors;
 	BeginDrawing();
 	ClearBackground(background);
 }

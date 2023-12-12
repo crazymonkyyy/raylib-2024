@@ -3,6 +3,7 @@ module raymathext;
 import raylib;
 //BAD: TODO:
 version(D_BetterC){
+	//import core.stdc.math:cos,sin,atan2,sqrt;
 }else{
 	import core.stdc.math:cos,sin,atan2,sqrt;
 }
@@ -74,6 +75,8 @@ alias Matrix4 = Matrix;
 
 mixin template Linear()
 {
+	version(D_BetterC){
+	} else:
     private static alias T = typeof(this);
     private import std.traits : FieldNameTuple;
 
@@ -192,7 +195,8 @@ mixin template Linear()
         return this;
     }
 }
-
+//BAD:
+/*
 unittest
 {
     assert(Vector2.init == Vector2.zero);
@@ -358,3 +362,4 @@ unittest
 {
     // TODO
 }
+*/

@@ -57,18 +57,18 @@ struct stickyindex(alias A,int low=0,size_t high=A.length){
 		index=0;
 	}
 }
-void main(){
-	int[5] foo_;
-	stickyindex!foo_ foo;
-	stickyindex!(foo_,2) bar;
-	foo=1;
-	foo[3]=5;
-	import std;
-	foo_.writeln;
-	foo=10;
-	foo_.writeln;
-	bar++=4;
-	bar++=6;
-	bar++=7;
-	foo_.writeln;
-}
+//void main(){
+//	int[5] foo_;
+//	stickyindex!foo_ foo;
+//	stickyindex!(foo_,2) bar;
+//	foo=1;
+//	foo[3]=5;
+//	import std;
+//	foo_.writeln;
+//	foo=10;
+//	foo_.writeln;
+//	bar++=4;
+//	bar++=6;
+//	bar++=7;
+//	foo_.writeln;
+//}

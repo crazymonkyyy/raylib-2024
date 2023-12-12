@@ -24,7 +24,7 @@ template counter(string s="unnamed"){
 }
 /*
 void main(){
-	import std;
+	import std   ;
 	counter!().writeln;
 	counter!"a".writeln;
 	counter!"a".writeln;

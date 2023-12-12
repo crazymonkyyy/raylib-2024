@@ -88,8 +88,8 @@ public
     import raylib.binding;
 }
 
-import core.stdc.config;
-import core.stdc.stdarg;
+//import core.stdc.config;
+//import core.stdc.stdarg;
 
 extern (C) @nogc nothrow:
 
@@ -179,8 +179,8 @@ struct Color{
 	ubyte g; // Color green value
 	ubyte b; // Color blue value
 	ubyte a=255; // Color alpha value
-	this(string s){
-		import std;
+	this()(string s){
+		import std.conv:to;
 		if(s[0..2]=="0x"){
 			s = s[2..$];
 		}
@@ -943,8 +943,8 @@ enum NPatchLayout
 
 // Callbacks to hook some internal functions
 // WARNING: These callbacks are intended for advance users
-
-alias TraceLogCallback = void function(int logLevel, const(char)* text, va_list args); // Logging: Redirect trace log messages
+//TODO:
+//alias TraceLogCallback = void function(int logLevel, const(char)* text, va_list args); // Logging: Redirect trace log messages
 alias LoadFileDataCallback = ubyte* function(const(char)* fileName, int* dataSize); // FileIO: Load binary data
 alias SaveFileDataCallback = bool function(const(char)* fileName, void* data, int dataSize); // FileIO: Save binary data
 alias LoadFileTextCallback = char* function(const(char)* fileName); // FileIO: Load text data
@@ -1099,8 +1099,8 @@ void MemFree(void* ptr); // Internal memory free
 
 // Set custom callbacks
 // WARNING: Callbacks setup is intended for advance users
-
-void SetTraceLogCallback(TraceLogCallback callback); // Set custom trace log
+//TODO:
+//void SetTraceLogCallback(TraceLogCallback callback); // Set custom trace log
 void SetLoadFileDataCallback(LoadFileDataCallback callback); // Set custom file binary data loader
 void SetSaveFileDataCallback(SaveFileDataCallback callback); // Set custom file binary data saver
 void SetLoadFileTextCallback(LoadFileTextCallback callback); // Set custom file text data loader

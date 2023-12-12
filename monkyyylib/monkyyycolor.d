@@ -3,7 +3,7 @@ struct colorscheme{
 	string name;
 	Color[16] data; alias data this;
 	this()(string file){
-		import std;
+		import basic;
 		import myalgorithms;
 		assert(file[$-4..$]==".csv");
 		name=file[file.lastindex('/')+1..$-4];
@@ -57,7 +57,7 @@ void resetcolors(){//called in start drawing
 }
 
 //void main(string[] s){
-//	import std;
+//	import std   ;
 //	auto a=colorscheme(s[1]);
 //	writeln("auto ",a.name," = ",a,";");
 //}

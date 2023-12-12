@@ -9637,8 +9637,8 @@ var _asyncify_start_unwind = createExportWrapper('asyncify_start_unwind');
 var _asyncify_stop_unwind = createExportWrapper('asyncify_stop_unwind');
 var _asyncify_start_rewind = createExportWrapper('asyncify_start_rewind');
 var _asyncify_stop_rewind = createExportWrapper('asyncify_stop_rewind');
-var ___start_em_js = Module['___start_em_js'] = 83424;
-var ___stop_em_js = Module['___stop_em_js'] = 83499;
+var ___start_em_js = Module['___start_em_js'] = 83680;
+var ___stop_em_js = Module['___stop_em_js'] = 83755;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===

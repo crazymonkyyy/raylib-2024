@@ -1,5 +1,5 @@
 //should be temporary, probaly wont be
-struct mystring(int N=80){
+struct str(int N=80){
 	char[N+1] data;
 	size_t length=0;
 	size_t dirty=N;
@@ -25,7 +25,7 @@ struct mystring(int N=80){
 			this~=c;
 	}}
 	void opOpAssign(string op: "~",T)(T t){
-		import std.conv;
+		import std.conv:to;
 		this~=t.to!string;
 	}
 	string opSlice(size_t a,size_t b){
@@ -44,8 +44,11 @@ struct mystring(int N=80){
 		return this.opSlice(cast(size_t)a,cast(size_t)b);
 	}
 	string opSlice()=>opSlice(0,length);
-	char* tostringz(T=size_t,S=size_t)(T t=0,S s=length){
-		return &opSlice(t,s);
+	string tostringz(T=size_t,S=size_t)(T t=0,S s=N){
+		return opSlice(t,s);
+	}
+	ref char opIndex(int i){
+		return data[i];
 	}
 	alias tostringz this;
 }

@@ -24,7 +24,7 @@ struct mystring(int N){
 			this~=c;
 	}}
 	void opOpAssign(string op: "~",T)(T t){
-		import std.conv;
+		import std.conv:to;
 		this~=t.to!string;
 	}
 	string opSlice(size_t a,size_t b){
