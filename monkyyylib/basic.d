@@ -14,6 +14,7 @@ version(D_BetterC){
 public import raylib;
 public import monkyyycolor;
 public import mystring;
+public import monkyyydraw;
 void makewindow(){
 	activecolorscheme=solarizeddark;
 	version(D_BetterC){
