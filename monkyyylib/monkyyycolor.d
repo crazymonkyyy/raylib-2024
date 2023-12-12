@@ -1,7 +1,7 @@
 import raylib;
 struct colorscheme{
 	string name;
-	Color[16] data;
+	Color[16] data; alias data this;
 	this()(string file){
 		import std;
 		import myalgorithms;
@@ -26,9 +26,38 @@ auto nord = colorscheme("nord", [Color(46, 52, 64, 255), Color(59, 66, 82, 255),
 auto onedark = colorscheme("onedark", [Color(40, 44, 52, 255), Color(53, 59, 69, 255), Color(62, 68, 81, 255), Color(84, 88, 98, 255), Color(86, 92, 100, 255), Color(171, 178, 191, 255), Color(182, 189, 202, 255), Color(200, 204, 212, 255), Color(224, 108, 117, 255), Color(209, 154, 102, 255), Color(229, 192, 123, 255), Color(152, 195, 121, 255), Color(86, 182, 194, 255), Color(97, 175, 239, 255), Color(198, 120, 221, 255), Color(190, 80, 70, 255)]);
 auto solarizeddark = colorscheme("solarized-dark", [Color(0, 43, 54, 255), Color(7, 54, 66, 255), Color(88, 110, 117, 255), Color(101, 123, 131, 255), Color(131, 148, 150, 255), Color(147, 161, 161, 255), Color(238, 232, 213, 255), Color(253, 246, 227, 255), Color(220, 50, 47, 255), Color(203, 75, 22, 255), Color(181, 137, 0, 255), Color(133, 153, 0, 255), Color(42, 161, 152, 255), Color(38, 139, 210, 255), Color(108, 113, 196, 255), Color(211, 54, 130, 255)]);
 auto solarizedlight = colorscheme("solarized-light", [Color(253, 246, 227, 255), Color(238, 232, 213, 255), Color(147, 161, 161, 255), Color(131, 148, 150, 255), Color(101, 123, 131, 255), Color(88, 110, 117, 255), Color(7, 54, 66, 255), Color(0, 43, 54, 255), Color(220, 50, 47, 255), Color(203, 75, 22, 255), Color(181, 137, 0, 255), Color(133, 153, 0, 255), Color(42, 161, 152, 255), Color(38, 139, 210, 255), Color(108, 113, 196, 255), Color(211, 54, 130, 255)]);
+enum colorschemenames=["dune", "darkviolet", "gruvboxdark", "gruvboxlight", "horizon", "mocha", "nord", "onedark", "solarizeddark", "solarizedlight"];
 
-void main(string[] s){
-	import std;
-	auto a=colorscheme(s[1]);
-	writeln("auto ",a.name," = ",a,";");
+public colorscheme activecolorscheme;//=solarizeddark;
+
+void swapcolorscheme(){
+	static int last=8;//TODO: check if 8 is solarized dark;
+	last++; last%=10;
+	lable: switch(last){
+		static foreach(i,s;colorschemenames){
+			mixin("case ",i,": activecolorscheme =",s,";");
+			break lable;
+		}
+		default: break;
+	}
 }
+import toggle;
+public stickyindex!(activecolorscheme,0,7)  background;
+public stickyindex!(activecolorscheme,1,8)  highlight;
+public stickyindex!(activecolorscheme,7,15) text;//15 or 16? is 16 the error color?should this line up with background and hightlights?
+public stickyindex!(activecolorscheme,8,16) color;
+public stickyindex!(activecolorscheme,0,16) allcolors;
+
+void resetcolors(){//called in start drawing
+	background.reset;
+	highlight.reset;
+	text.reset;
+	color.reset;
+	//allcolors //maybe someone making rainbow vomit wont want this to reset
+}
+
+//void main(string[] s){
+//	import std;
+//	auto a=colorscheme(s[1]);
+//	writeln("auto ",a.name," = ",a,";");
+//}
