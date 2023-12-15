@@ -41,7 +41,7 @@ void swapcolorscheme(){
 		default: break;
 	}
 }
-import toggle;
+import staticabstractions;
 public stickyindex!(activecolorscheme,0,7)  background;
 public stickyindex!(activecolorscheme,1,8)  highlight;
 public stickyindex!(activecolorscheme,7,15) text;//15 or 16? is 16 the error color?should this line up with background and hightlights?

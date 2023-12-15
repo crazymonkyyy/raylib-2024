@@ -25,11 +25,11 @@ template counter(string s="unnamed"){
 /*
 void main(){
 	import std   ;
-	counter!().writeln;
-	counter!"a".writeln;
-	counter!"a".writeln;
-	counter!().writeln;
-	counter!().writeln;
-	counter!"a".writeln;
+	counter!().writeln;//unnamed=0
+	counter!"a".writeln;//a=0
+	counter!"a".writeln;//a=1
+	counter!().writeln;//unnamed=1
+	counter!().writeln;//unnamed=2
+	counter!"a".writeln;//a=2
 }
 */

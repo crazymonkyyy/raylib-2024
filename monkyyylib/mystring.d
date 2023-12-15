@@ -1,5 +1,10 @@
 //should be temporary, probaly wont be
-struct str(int N=80){
+bool bigint(int i){
+	return i>10_000_000;
+}
+
+str!(80) str(){return str!(80)();}
+struct str(int N){
 	char[N+1] data;
 	size_t length=0;
 	size_t dirty=N;
@@ -25,8 +30,53 @@ struct str(int N=80){
 			this~=c;
 	}}
 	void opOpAssign(string op: "~",T)(T t){
+		version(D_BetterC) static assert(0,"called an arbitery to!string, this always ends in random std errors missing something");
 		import std.conv:to;
 		this~=t.to!string;
+	}
+	char todigit(int i){
+		return '0'+i%10;
+	}
+	//TODO: test, test, test
+	void opOpAssign(string op: "~",T:int)(T i){
+		if(i<0){
+			this~='-';
+			i=-i;
+		}
+		if(i.bigint){
+			//TODO: science notation
+			this~="bigidk";
+			return;
+		}
+		bool sig=false;
+		for(int j=1_000_000;j!=0;j/=10){
+			char c=todigit(i/j);
+			if(c!='0'){sig=true;}
+			if(sig||j==1){this~=c;}
+		}
+	}
+	void opOpAssign(string op: "~",T:float)(T f){
+		if(f != f) {this~="nan";return;}
+		else if(f == -float.infinity) {this~="-inf"; return;}
+		else if(f == float.infinity) {this~="inf"; return;}
+		auto l=length;
+		this~=cast(int)f;
+		this~='.';
+		if(length-l>8){return;}
+		f-=cast(int)f;
+		while(length-l>8){
+			f*=10;
+			this~=todigit(cast(int)f);
+		}
+	}
+	void opOpAssign(string op: "~",T:double)(T f){
+		this~=cast(float)f;
+	}
+	ref opBinary(string op: "~",T)(T t){
+		if(length<=N){
+			this~=t;
+		}
+		return this;
 	}
 	string opSlice(size_t a,size_t b){
 		clean();

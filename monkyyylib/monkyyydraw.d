@@ -9,7 +9,7 @@ void drawA(T...)(T args)=>draw(args,color:allcolor);
 
 //void draw(T...)(Vector2 vec2,T args)=>draw(x:cast(int)vec2.x,y:cast(int)vec2.y,args);
 struct gradent{}
-import toggle;
+import staticabstractions;
 //void draw(gradent g,alias A,int low,size_t high,T...)(stickyindex!(A,low,high) color,T args)=>draw(color1:color++,color2:color--,args);
 
 alias draw=raylib.DrawCircle;
