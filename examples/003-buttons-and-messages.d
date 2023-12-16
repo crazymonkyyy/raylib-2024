@@ -7,18 +7,21 @@ void main_(){// hack for making swapping between wasm and native work
 		startdrawing;
 		with(button){
 		if(z){
-			"z.pressed".writeln;
+			status("z is down",1);
 		}
-		if(x.toggle){
-			"x toggle".writeln;
+		if(x.pressed){
+			status("x was pressed");
 		}
 		if(ctrl+c){
-			"copied".writeln;
+			status("copied");
 		}
-		if(super_+shift+alt+v){
-			"hi".writeln;
+		if(v.toggle){
+			status("v is toggled on",1);
 		}
-		EndDrawing();
+		if(super_+shift+alt+b){
+			status("your pressed allot of buttons",300);
+		}
+		enddrawing;
 	}}
 	CloseWindow();
 }

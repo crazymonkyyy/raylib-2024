@@ -101,4 +101,8 @@ struct str(int N){
 		return data[i];
 	}
 	alias tostringz this;
+	
+	void delete_(){
+		length=0;
+	}
 }

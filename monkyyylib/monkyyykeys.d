@@ -1,4 +1,11 @@
 import raylib;
+version(D_BetterC){
+	import staticsizedata;
+	alias __array__=staticarray!(button_,5);
+}else{
+	alias __array__=button_[];
+}
+
 struct button_{
 	int which;
 	bool ismouse=false;
@@ -18,17 +25,25 @@ struct button_{
 	}
 	bool opCast(T:bool)(){ return down;}
 	buttoncord opBinary(string s:"+")(button_ b){
-		return buttoncord([this,b],[]);}
+		buttoncord o;
+		o.me~=this;
+		o.me~=b;
+		return o;
+	}
 	buttoncord opBinary(string s:"-")(button_ b){
-		return buttoncord([this],[b]);}
+		buttoncord o;
+		o.me~=this;
+		o.notme~=b;
+		return o;
+	}
 	bool toggle(bool b=false,int i=__LINE__)(){
 		import staticabstractions;
 		return pressed.toggle!(b,void,i);
 	}
 }
 struct buttoncord{
-	button_[] me;
-	button_[] notme;
+	__array__ me;
+	__array__ notme;
 	buttoncord opBinary(string s:"+")(button_ b){
 		me~=b; return this;
 	}

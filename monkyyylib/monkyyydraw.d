@@ -42,11 +42,11 @@ void drawtext(/*T,*/I,J,C,C2)(string text_,I x,I y,J textsize=16,C color=text,C2
 	int width=MeasureText(t_,size);
 	if(x_<0){
 		x_=-x_;
-		x-=width;
+		x_-=width;
 	}
 	if(y_<0){
 		y_=-y_;
-		y-=size;
+		y_-=size;
 	}
 	draw(x_,y_,width,size,color2);
 	DrawText(t_,x_,y_,size,color);

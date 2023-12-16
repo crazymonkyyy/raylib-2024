@@ -22,7 +22,7 @@ void main_(){// hack for making swapping between wasm and native work
 		bar.drawtext(200,216);
 		resetcolors;
 		drawtext(str~1000~','~1337,400,500);
-		EndDrawing();
+		enddrawing;
 	}
 	CloseWindow();
 }

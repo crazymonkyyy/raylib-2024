@@ -34,8 +34,26 @@ void makewindow(){
 		SetTargetFPS(60);
 	}
 }
+str!120 statusstring;
+int statusdecay;
+void status(T)(T status_,int length=120){
+	statusstring.delete_;
+	statusstring~=status_;
+	statusdecay=length;
+}
 void startdrawing(){
 	resetcolors;
 	BeginDrawing();
 	ClearBackground(background);
+}
+void enddrawing(){
+	if(button.f10.toggle){
+		DrawFPS(0,0);
+	}
+	if(statusdecay-->0){
+		statusstring.drawtext(-800,-640);//TODO: colors?
+	} else {
+		statusdecay=0;//prevent underflow
+	}
+	EndDrawing();
 }

@@ -6,6 +6,9 @@ template toggle(bool defualt=false,alias discriminator=void, int i=__LINE__){
 		}
 		return __toggle;
 	}
+	bool toggle(){
+		return __toggle;
+	}
 }
 //import std;
 //void main(){
