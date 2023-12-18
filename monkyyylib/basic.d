@@ -21,6 +21,7 @@ public import mystring;
 public import monkyyydraw;
 public import monkyyykeys;
 public import staticabstractions;
+public import debugsystem;
 void makewindow(){
 	activecolorscheme=solarizeddark;
 	version(D_BetterC){
@@ -55,5 +56,6 @@ void enddrawing(){
 	} else {
 		statusdecay=0;//prevent underflow
 	}
+	debugsystemending;
 	EndDrawing();
 }

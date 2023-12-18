@@ -2,6 +2,7 @@ import monkyyydraw;
 import mystring;
 import staticabstractions;
 import namedcounter;
+import monkyyykeys;
 
 struct __debug{}
 
@@ -26,3 +27,14 @@ void debugwriteln()(){
 	static foreach(i;0..finalizecount!()){
 		debugstorage!i[].writeln;
 }}
+void debugdraw()(){
+	if( ! debugtoggle){return;}
+	static foreach(i;0..finalizecount!()){
+		debugstorage!i[].drawtext(0,i*16);
+}}
+void debugsystemending()(){//made for enddrawing
+	if( ! button.f2.pressed.debugtoggle){
+		return;
+	}
+	debugdraw;
+}

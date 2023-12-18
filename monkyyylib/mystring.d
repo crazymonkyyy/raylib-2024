@@ -2,7 +2,7 @@
 bool bigint(int i){
 	return i>10_000_000;
 }
-
+import raylib;
 str!(80) str(){return str!(80)();}
 struct str(int N){
 	char[N+1] data;
@@ -33,6 +33,9 @@ struct str(int N){
 		version(D_BetterC) static assert(0,"called an arbitery to!string, this always ends in random std errors missing something");
 		import std.conv:to;
 		this~=t.to!string;
+	}
+	void opOpAssign(string op: "~")(Vector2 v){
+		this~v.x~','~v.y;
 	}
 	char todigit(int i){
 		return '0'+i%10;
