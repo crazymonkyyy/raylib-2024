@@ -22,6 +22,7 @@ public import monkyyydraw;
 public import monkyyykeys;
 public import staticabstractions;
 public import debugsystem;
+public import staticsizedata;
 void makewindow(){
 	activecolorscheme=solarizeddark;
 	version(D_BetterC){

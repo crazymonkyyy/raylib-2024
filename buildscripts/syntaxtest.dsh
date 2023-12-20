@@ -1,1 +1,1 @@
-dmd -i -main -unittest -run syntaxtestcode/$file .d
+dmd -i -main -unittest -run syntaxtestcode/$file

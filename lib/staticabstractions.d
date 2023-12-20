@@ -40,6 +40,7 @@ struct stickyindex(alias A,int low=0,size_t high=A.length){
 		index=i%(high-low);
 		return A[low..high][index];
 	}
+	ref opIndex(size_t i)=> this[cast(int)i];
 	ref __get__(){
 		return A[low..high][index];
 	}
@@ -75,3 +76,9 @@ struct stickyindex(alias A,int low=0,size_t high=A.length){
 //	bar++=7;
 //	foo_.writeln;
 //}
+
+alias aliasseq(T...)=T;
+struct tuple(T...){
+	T types;
+	alias types this;
+}

@@ -1,1 +1,1 @@
-dmd -I./lib -I./raylib -I./monkyyylib -L-lraylib -i -mixin=mix -run $file .d
+dmd -I./lib -I./raylib -I./monkyyylib -L-lraylib -i -mixin=mix -run $file

@@ -17,10 +17,11 @@ TODO:
 ## biulding
 
 ./biuld.d [-mode] file
+
 modes:
-wasm - attempts to biuld wasm and runs 0.0.0.0
-(none) - native
-... others TODO:
+* wasm - attempts to biuld wasm and runs 0.0.0.0
+* (none) - native
+* ... others TODO:
 
 ## contributing
 
@@ -36,7 +37,4 @@ For big projects I dont want todo:
 ## declaring alpha and anouncing it todo list
 
 * website + demos (even if ugly defualt enscription webpage)
-* an arcade game example code
-* all example code, all compiles without modifing the code base by commenting anything out
-* make biuld commands accept full file names
 * readme todos
