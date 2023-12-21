@@ -38,3 +38,12 @@ For big projects I dont want todo:
 
 * website + demos (even if ugly defualt enscription webpage)
 * readme todos
+
+## beta todo list
+
+* theme swaping
+* custom web page for examples
+* fully tested, well designed, all op overloads data stuctures
+* 10 examples games?
+* TODO:
+* handle all random todos
