@@ -36,7 +36,7 @@ For big projects I dont want todo:
 
 ## declaring alpha and anouncing it todo list
 
-* website + demos (even if ugly defualt enscription webpage)
+* ~~website + demos (even if ugly defualt enscription webpage)~~ shipping to itch is acceptable alteritive
 * readme todos
 
 ## beta todo list
