@@ -82,3 +82,15 @@ struct tuple(T...){
 	T types;
 	alias types this;
 }
+auto ref weak(T,alias A)(){
+	static if(is(T:typeof(A))){
+		return A;
+	} else {
+		return T.init;
+}}
+auto ref weak(T,S)(auto ref S a){
+	static if(is(T:S)){
+		return a;
+	} else {
+		return T.init;
+}}

@@ -1,5 +1,6 @@
 import raylib;
 import monkyyycolor;
+import staticabstractions;
 //export sanity; todo
 
 void draw_(T...)(T args)=>draw(args,color:color);//todo make smart
@@ -28,7 +29,8 @@ right now im getting nonsense errors, and shit
 I stuggle with 3 layers of recersion 
 */
 
-void drawtext(/*T,*/I,J,C,C2)(string text_,I x,I y,J textsize=16,C color=text,C2 color2=highlight){
+void drawtext(/*T,*/I,J=int,C=typeof(text),C2=typeof(highlight))
+		(string text_,I x,I y,J textsize=weak!J(16),C color=weak!(C,text),C2 color2=weak!(C2,highlight)){
 	if(text_.length==0){return;}
 	void assertcstring(T)(char* s,T len){
 		assert(s[len]==0,"is not a c string");

@@ -49,6 +49,9 @@ void startdrawing(){
 	ClearBackground(background);
 }
 void enddrawing(){
+	if(button.f9.pressed){
+		swapcolorscheme;
+	}
 	if(button.f10.toggle){
 		DrawFPS(0,0);
 	}
