@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>monkyyy's wasm+d+raylib</title>
+		<style>
+			body {
+				padding: none;
+				margin-top: 0px;
+				margin-left: 0px;
+				background-color: #000000;
+			}
+		</style>
+	</head>
+	<body>
+			<canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex="0" onclick="focus_canvas()"></canvas>
+			<script>
+				function focus_canvas() {
+					document.getElementById('canvas').focus();
+				}
+			</script>
+			{{{ SCRIPT }}}
+	</body>
+</html>

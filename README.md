@@ -47,3 +47,16 @@ For big projects I dont want todo:
 * 10 examples games?
 * TODO:
 * handle all random todos
+
+## windows
+
+Windows isnt offically supported, but a test run was done
+
+rough biuld commands
+  1. steal this script and run it https://github.com/schveiguy/raylib-d/blob/master/install/source/app.d to get a "raylib.lib and raylib.dll"
+  2.`ldc -I.\lib -I.\raylib -I.\monkyyylib -L-lraylib -i -mixin=mix -run examples\001-helloworld.d`
+  
+windows support todo:
+	1. windows off by one of posix string args
+	2. steal script and run it
+	3. biuld.d more robust in general
