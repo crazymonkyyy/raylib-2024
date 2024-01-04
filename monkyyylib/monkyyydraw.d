@@ -54,3 +54,33 @@ void drawtext(/*T,*/I,J=int,C=typeof(text),C2=typeof(highlight))
 	draw(x_,y_,width,size,color2);
 	DrawText(t_,x_,y_,size,color);
 }
+auto loadspritesheet(string sheet_,int width,int height)(){
+	struct spritesheet{
+		Texture baseimage;
+		size_t i;
+		auto init(){
+			baseimage=LoadTexture("assets/keys.png");
+			return this;
+		}
+		auto __get(int x,int y,float scale=1.0,float rotation=0){
+			auto count=baseimage.width/width;
+			DrawTexturePro(baseimage,Rectangle((i%count)*width,(i/count)*height,width,height), Rectangle(x,y,width*scale,height*scale), Vector2((width/2)*scale,(height/2)*scale),rotation, Color(255,255,255,255));
+		}
+		alias opCall=__get;
+		auto opIndex(size_t j){
+			auto count=baseimage.width/width;
+			auto county=baseimage.height/height;
+			if(j>count*county){return this;}
+			i=j;
+			return this;
+		}
+		auto opIndex(size_t x,size_t y){
+			auto count=baseimage.width/width;
+			auto county=baseimage.height/height;
+			if(x>count||y>county){return this;}
+			return this[x+y*count];
+		}
+	}
+	spritesheet foo;
+	return foo.init;
+}

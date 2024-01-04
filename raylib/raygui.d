@@ -15,8 +15,8 @@ private template HasVersion(string versionId) {
 	mixin("version("~versionId~") {enum HasVersion = true;} else {enum HasVersion = false;}");
 }
 //import core.stdc.config: c_long, c_ulong;
-alias c_long=long
-alias c_ulong=ulong
+alias c_long=long;
+alias c_ulong=ulong;
 /*******************************************************************************************
 *
 *   raygui v3.5-dev - A simple and easy-to-use immediate-mode gui library

@@ -41,7 +41,6 @@ For big projects I dont want todo:
 
 ## beta todo list
 
-* theme swaping
 * custom web page for examples
 * fully tested, well designed, all op overloads data stuctures
 * 10 examples games?

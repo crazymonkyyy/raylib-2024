@@ -85,5 +85,6 @@ enum button{
 	left,down_,up,//TODO: fix down wierd behavoir... or something
 	tab=button_(KeyboardKey.KEY_TAB),
 	backspace,insert,delete_,
+	space=button_(KeyboardKey.KEY_SPACE),
 }
 //todo: all keys, but not by me
