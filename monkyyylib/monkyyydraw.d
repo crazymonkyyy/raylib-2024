@@ -59,12 +59,12 @@ auto loadspritesheet(string sheet_,int width,int height)(){
 		Texture baseimage;
 		size_t i;
 		auto init(){
-			baseimage=LoadTexture("assets/keys.png");
+			baseimage=LoadTexture(sheet_);
 			return this;
 		}
 		auto __get(int x,int y,float scale=1.0,float rotation=0){
-			auto count=baseimage.width/width;
-			DrawTexturePro(baseimage,Rectangle((i%count)*width,(i/count)*height,width,height), Rectangle(x,y,width*scale,height*scale), Vector2((width/2)*scale,(height/2)*scale),rotation, Color(255,255,255,255));
+			auto count=baseimage.width/width;//TODO: ughhhhh rotation and orgin are limitmented navively on raylibs side here, and the math to fix it is.... allot, rotate will behave wierd
+			DrawTexturePro(baseimage,Rectangle((i%count)*width,(i/count)*height,width,height), Rectangle(x,y,width*scale,height*scale), /*Vector2((width/2)*scale,(height/2)*scale)*/ Vector2(0,0),rotation, Color(255,255,255,255));
 		}
 		alias opCall=__get;
 		auto opIndex(size_t j){

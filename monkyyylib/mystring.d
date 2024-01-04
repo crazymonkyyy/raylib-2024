@@ -114,7 +114,7 @@ struct str(int N){
 		if(button.backspace){
 			if(timer==0 ||(timer>30 && timer%3==0)){//factor out into a generic function? 
 				if(length>0)length--;
-			}
+			}//TODO: "I measured it in SDL now, seems it's ~40 frames until the second tick and then 2.5 frames" -tg
 			timer++;
 		} else {
 			timer=0;

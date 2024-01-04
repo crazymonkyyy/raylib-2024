@@ -22,3 +22,8 @@ S remap(T,S)(T value, T fromLow, T fromHigh, S toLow, S toHigh){
 	auto t=inverseLerp(fromLow, fromHigh, value);
 	return lerp(toLow, toHigh, t);
 }
+T clamp(T)(ref T v,T l,T h){
+	if(v<l)v=l;
+	if(v>h)v=h;
+	return v;
+}
