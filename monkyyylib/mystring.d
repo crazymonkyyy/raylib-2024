@@ -108,4 +108,25 @@ struct str(int N){
 	void delete_(){
 		length=0;
 	}
+	void type(){
+		import monkyyykeys;
+		static timer=0;
+		if(button.backspace){
+			if(timer==0 ||(timer>30 && timer%3==0)){//factor out into a generic function? 
+				if(length>0)length--;
+			}
+			timer++;
+		} else {
+			timer=0;
+		}
+		if(button.Rshift+button.backspace){//TODO: consider metakeys as pairs?
+			length=0;//TODO: if not write it for both
+		}
+		loop:
+		int t=GetCharPressed();
+		if(t!=0){
+			this~=cast(char)t;
+			goto loop;
+		}
+	}
 }
