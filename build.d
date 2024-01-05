@@ -12,13 +12,14 @@ void main(string[] s){
 	}
 	file=s[1];
 	//----
-	dstring command=File(buildscript).byLineCopy.join(';').array;
-	command.writeln;
+	auto command=File(buildscript).byLineCopy;
+	//command.writeln;
 	import stringinterp;
-	string command_=command.to!string.interp([
-		"file":file,
-	]);
-	command_.writeln;
-	auto pid=spawnShell(command_);
-	wait(pid);
+	auto command_=command.map!(
+		a=>a.to!string.interp([
+			"file":file,
+		])
+	);
+	//command_.writeln;
+	command_.each!((a){a.writeln;a.executeShell.output.writeln;});
 }

@@ -128,12 +128,17 @@ auto elementslice(string toiter="[]",D,E)(D datastucture,E first,E last){
 	auto r1=mixin("datastucture"~toiter);
 	auto firstfilter=r1.filter!(a=>a==first).swapkeyvalue;
 	if(firstfilter.empty){return datastucture[0..0];}
-	auto r2=mixin("datastucture[firstfilter.front..$]"~toiter);
+	auto r2=mixin("datastucture[firstfilter.front+1..$]"~toiter);
 	auto secondfilter=r2.filter!(a=>a==last).swapkeyvalue;
 	if(secondfilter.empty){return datastucture[firstfilter.front..$];}
-	return datastucture[firstfilter.front..secondfilter.front];
+	return datastucture[firstfilter.front+1..secondfilter.front+firstfilter.front+1];
 }
 unittest{
 	import std;
 	"foobar[hi(1223423)..$] = foolknnasdjlkn".elementslice!".byascii"('[',']').writeln;
+}
+unittest{
+	import std;
+	"auto keys=loadspritesheet!(\"assets/keys.png\",16,16);".elementslice!".byascii"('"','"').writeln;
+	"".elementslice!".byascii"('"','"').writeln;
 }

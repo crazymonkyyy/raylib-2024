@@ -55,6 +55,7 @@ void enddrawing(){
 	if(button.f10.toggle){
 		DrawFPS(0,0);
 	}
+	if( ! IsWindowFocused){status("click to focus",1);}//TODO: doesnt work on wasm where the issue was
 	if(statusdecay-->0){
 		statusstring.drawtext(-800,-640);//TODO: colors?
 	} else {
