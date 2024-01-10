@@ -14,6 +14,7 @@ import staticabstractions;
 //void draw(gradent g,alias A,int low,size_t high,T...)(stickyindex!(A,low,high) color,T args)=>draw(color1:color++,color2:color--,args);
 
 alias draw=raylib.DrawCircle;
+alias draw=raylib.DrawCircleV;
 alias draw=raylib.DrawCircleGradient;
 alias draw=raylib.DrawPixel;
 alias draw=raylib.DrawRectangle;

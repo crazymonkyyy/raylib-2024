@@ -4,12 +4,6 @@ __LINE__
 // expansion at ./lib/namedcounter.d(12)
 __LINE__
 
-// expansion at ./lib/namedcounter.d(21)
-__LINE__
-
-// expansion at ./lib/namedcounter.d(12)
-__LINE__
-
 // expansion at
 .object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
 

@@ -58,6 +58,7 @@ struct buttoncord{
 		return me[$-1].pressed;
 	}
 }
+
 /*
 import std.stdio;
 void main(){
