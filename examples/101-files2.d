@@ -27,6 +27,9 @@ void main_(){// hack for making swapping between wasm and native work
 			if(left.pressed){
 				temp2=LoadDirectoryFiles("/");
 			}
+			if(right.pressed){
+				OpenURL("data:application/text,hello world");
+			}
 			if(space.pressed){
 				load;
 			}
@@ -36,8 +39,8 @@ void main_(){// hack for making swapping between wasm and native work
 				SaveFileText(cast(char*)&"//proc/self/fd/RAYLIB"[0],cast(char*)&"PRINTING FROM WASM3"[0]);
 				SaveFileText(cast(char*)&"//proc/self/fd"[0],cast(char*)&"PRINTING FROM WASM4"[0]);
 				SaveFileText(cast(char*)&"//tmp/RAYLIB"[0],cast(char*)&"PRINTING FROM WASM5"[0]);
-				SaveFileText(cast(char*)&"RAYLIB"[0],cast(char*)&"PRINTING FROM WASM6"[0]);
-				SaveFileText(cast(char*)&"//RAYLIB"[0],cast(char*)&"PRINTING FROM WASM7"[0]);
+				SaveFileText(cast(char*)&"RAYLIB.txt"[0],cast(char*)&"PRINTING FROM WASM6"[0]);
+				SaveFileText(cast(char*)&"//RAYLIB.txt"[0],cast(char*)&"PRINTING FROM WASM7"[0]);
 				SaveFileText(cast(char*)&"//assets/RAYLIB"[0],cast(char*)&"PRINTING FROM WASM8"[0]);
 			}
 		}
