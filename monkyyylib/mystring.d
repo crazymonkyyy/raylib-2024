@@ -100,6 +100,9 @@ struct str(int N){
 	string tostringz(T=size_t,S=size_t)(T t=0,S s=N){
 		return opSlice(t,s);
 	}
+	char* tocharz(){
+		return cast(char*)(&(tostringz()[0]));
+	}
 	ref char opIndex(int i){
 		return data[i];
 	}

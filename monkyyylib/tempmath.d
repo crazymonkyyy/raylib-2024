@@ -65,3 +65,37 @@ float cos(float x){
 float sin(float x){//TODO check if this is all correct parity
 	return cos(x-90);
 }
+auto binaryblob(T=ubyte,S,size_t N)(S[N] data...){
+	enum M=(S.sizeof*N)/T.sizeof;
+	return *cast(T[M]*)(&data);
+}
+/*
+void main(){
+	import std;
+	ulong x=0xffeeddccbbaa9988;
+	[x].binaryblob.writeln;
+	x.writeln;
+	[x].binaryblob.binaryblob!ulong.writeln;
+}
+*/
+auto tostringblob(T,size_t N)(T[N] data...){
+	import mystring;
+	enum chars="0123456789ABCDEF";
+	str!(T.sizeof*N*2+N*3+N/8+5) o;
+	foreach(i,list;data){
+		o~="0x";
+		foreach(e;binaryblob([list])){
+			o~=chars[e/16];
+			o~=chars[e%16];
+		}
+		o~=',';
+		if(i%8==7){
+			o~='\n';
+		}
+	}
+	return o;
+}
+/*void main(){
+	import std;
+	[1,2,1337].tostringblob.writeln;
+}*/

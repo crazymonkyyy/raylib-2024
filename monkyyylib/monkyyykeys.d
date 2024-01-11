@@ -40,6 +40,42 @@ struct button_{
 		import staticabstractions;
 		return pressed.toggle!(b,void,i);
 	}
+	ubyte ramp(int i=__LINE__)(){//TODO rename i's in templates for clarity 
+		static ubyte i;
+		if(down){
+			if(i!=255){i++;}
+		} else {
+			i=0;
+		}
+		return i;
+	}
+	ubyte decay(int i=__LINE__)(ubyte increase, ubyte decrease){
+		static ubyte i;
+		if(down){
+			if(i+increase>255){i=255;}
+			else{i+=increase;}
+		} else {
+			if(i-decrease<0){i=0;}
+			else{i-=decrease;}
+		}
+		return i;
+	}
+	ubyte tapable(int i=__LINE__)(ubyte tap,ubyte increase, ubyte decrease){
+		static ubyte i;
+		if(pressed){
+			if(i+increase>255){i=255;}
+			else{i+=increase;}
+			return i;
+		}
+		if(down){
+			if(i+increase>255){i=255;}
+			else{i+=increase;}
+		} else {
+			if(i-decrease<0){i=0;}
+			else{i-=decrease;}
+		}
+		return i;
+	}
 }
 struct buttoncord{
 	__array__ me;
