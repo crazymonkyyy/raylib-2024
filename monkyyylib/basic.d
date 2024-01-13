@@ -23,6 +23,7 @@ public import monkyyykeys;
 public import staticabstractions;
 public import debugsystem;
 public import staticsizedata;
+public import fileio;
 void makewindow(){
 	activecolorscheme=solarizeddark;
 	version(D_BetterC){

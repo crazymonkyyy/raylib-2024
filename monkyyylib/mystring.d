@@ -3,8 +3,8 @@ bool bigint(int i){
 	return i>10_000_000;
 }
 import raylib;
-str!(80) str(){return str!(80)();}
-struct str(int N){
+str!(80) mystr(){return str!(80)();}
+struct str(int N=80){
 	char[N+1] data;
 	size_t length=0;
 	size_t dirty=N;
@@ -132,4 +132,9 @@ struct str(int N){
 			goto loop;
 		}
 	}
+}
+bool isletter(char c){
+	return
+	(c>='A' && c<='Z') ||
+	(c>='a' && c<='z');
 }
