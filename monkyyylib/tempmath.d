@@ -3,11 +3,16 @@ T abs(T)(T a){
 	if(a>0){return a;}
 	return -a;
 }
+void swap(T)(T a,T b){
+	T t=a;
+	a=b;
+	b=t;
+}
 auto dis(Vector2 a,Vector2 b){
 	return abs(a.x-b.x)+abs(a.y-b.y);
 }
 T lerp(T)(T a, T b, float t){
-	return a + (b - a) * t;
+	return a +cast(T)((b-a)*t);
 }
 T min(T)(T a, T b){
 	static if(is(T==size_t)){
@@ -16,9 +21,9 @@ T min(T)(T a, T b){
 	if(a<b){return a;}
 	return b;
 }
-T inverseLerp(T)(T a, T b, T value){
+float inverseLerp(T)(T a, T b, T value){
 	if (a != b) {
-		return (value - a) / (b - a);
+		return (value - a) / (cast(float)b - a);
 	} else {
 		return a;
 	}
@@ -28,7 +33,7 @@ S remap(T,S)(T value, T fromLow, T fromHigh, S toLow, S toHigh){
 	auto t=inverseLerp(fromLow, fromHigh, value);
 	return lerp(toLow, toHigh, t);
 }
-T clamp(T)(ref T v,T l,T h){
+T clamp(T)(auto ref T v,T l,T h){
 	if(v<l)v=l;
 	if(v>h)v=h;
 	return v;
@@ -42,7 +47,7 @@ T clamp(T)(ref T v,T l,T h){
 //}
 
 T warp(T)(T v,T low,T high){//TODO actaully math
-	while(v>high){
+	while(v>=high){
 		v-=high-low;
 	}
 	while(v<low){
@@ -52,6 +57,23 @@ T warp(T)(T v,T low,T high){//TODO actaully math
 }
 int floor(float f){
 	return cast(int)f;
+}
+T min(T)(T[] a...){
+	T o=T.max;
+	foreach(e;a){
+		if(e<o){o=e;}
+	}
+	return o;
+}
+T max(T)(T[] a...){
+	T o=T.min;
+	foreach(e;a){
+		if(e>o){o=e;}
+	}
+	return o;
+}
+tuple!(T,T) extermes(T)(T[] a...){
+	return tuple!(T,T)(min(a),max(a));
 }
 
 float cos(float x){

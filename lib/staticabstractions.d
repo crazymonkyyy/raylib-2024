@@ -10,6 +10,15 @@ template toggle(bool defualt=false,alias discriminator=void, int i=__LINE__){
 		return __toggle;
 	}
 }
+ubyte ramp(int i=__LINE__)(bool b){//TODO rename i's in templates for clarity 
+	static ubyte i;
+	if(b){
+		if(i!=255){i++;}
+	} else {
+		i=0;
+	}
+	return i;
+}
 //import std;
 //void main(){
 //	foreach(i;0..15){

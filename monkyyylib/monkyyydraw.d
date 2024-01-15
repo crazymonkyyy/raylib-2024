@@ -6,7 +6,7 @@ import staticabstractions;
 void draw_(T...)(T args)=>draw(args,color:color);//todo make smart
 void drawH(T...)(T args)=>draw(args,color:highlight);
 void drawB(T...)(T args)=>draw(args,color:background);
-void drawA(T...)(T args)=>draw(args,color:allcolor);
+void drawA(T...)(T args)=>draw(args,color:allcolors);
 
 //void draw(T...)(Vector2 vec2,T args)=>draw(x:cast(int)vec2.x,y:cast(int)vec2.y,args);
 struct gradent{}

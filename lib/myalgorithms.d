@@ -42,14 +42,16 @@ enum isIter(R)=is(typeof(
 		return r.front;
 	}));
 enum hasIndex(R)=is(typeof((R r)=>r.index));
-auto counter(int i){
+auto counter(int i)=> counter(0,i);
+auto counter(int f,int e){
+	//import std; writeln(f,e);
 	struct counter_{
+		int front;
 		int end;
-		int front=0;
 		void pop(){front++;}
 		bool empty()=>front>=end;
 	}
-	return counter_(i);
+	return counter_(f,e);
 }
 void print(R)(R r){
 	static assert(isIter!R,"not an iter");
@@ -141,4 +143,13 @@ unittest{
 	import std;
 	"auto keys=loadspritesheet!(\"assets/keys.png\",16,16);".elementslice!".byascii"('"','"').writeln;
 	"".elementslice!".byascii"('"','"').writeln;
+}
+auto tophoboes(R)(R r){
+	struct range{
+		R r;
+		auto front()=>r.front;
+		auto popFront()=>r.pop;
+		auto empty()=>r.empty;
+	}
+	return range(r);
 }
