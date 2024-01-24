@@ -59,6 +59,9 @@ void main_(){// hack for making swapping between wasm and native work
 		inputnames[inputmethod].drawtext(516,24,16,allcolors);
 		
 		with(button){
+		if(ctrl+c){
+			SetClipboardText(data[activegraph].binaryblob!ulong.tostringblob.tocharz);
+		}
 		if(mouse3.pressed){
 			activegraph=warp(activegraph+1,0,8);
 		}

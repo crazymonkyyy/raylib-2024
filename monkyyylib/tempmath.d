@@ -89,7 +89,12 @@ float sin(float x){//TODO check if this is all correct parity
 }
 auto binaryblob(T=ubyte,S,size_t N)(S[N] data...){
 	enum M=(S.sizeof*N)/T.sizeof;
-	return *cast(T[M]*)(&data);
+	//static if(__ctfe){
+	//	//T[M] o;
+	//	//foreach(i,e;
+	//} else {
+		return *cast(T[M]*)(&data[0]);
+	//}
 }
 /*
 void main(){

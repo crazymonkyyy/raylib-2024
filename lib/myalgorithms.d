@@ -153,3 +153,31 @@ auto tophoboes(R)(R r){
 	}
 	return range(r);
 }
+auto map(alias F,R)(R r){
+	struct map_{
+		R r;
+		auto ref front()=>F(r.front);
+		void pop()=> r.pop;
+		bool empty()=> r.empty;
+	}
+	return map_(r);
+}
+auto toiter(T)(T[] r...){
+	struct iter{
+		T[] r;
+		ref T front()=>r[0];
+		void pop(){
+			r=r[1..$];
+		}
+		bool empty()=> r.length==0;
+	}
+	return iter(r);
+}
+auto array(R)(R r){
+	typeof(r.front())[] data;
+	//data.capisity=r.length
+	foreach(e;r.tophoboes){
+		data~=e;
+	}
+	return data;
+}
