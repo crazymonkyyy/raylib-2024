@@ -36,6 +36,7 @@ void makewindow(){
 		SetWindowPosition(1700,0);//TODO: make customizable, config file
 		SetTargetFPS(60);
 	}
+	InitAudioDevice;
 }
 str!120 statusstring;
 int statusdecay;
