@@ -70,7 +70,7 @@ struct str(int N=80){
 		while(length-l>8){
 			f*=10;
 			this~=todigit(cast(int)f);
-		}
+		}//TODO doesnt seem to print any lower digits
 	}
 	void opOpAssign(string op: "~",T:double)(T f){
 		this~=cast(float)f;
