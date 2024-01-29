@@ -6,7 +6,7 @@ void main_(){// hack for making swapping between wasm and native work
 	while (!WindowShouldClose()){
 		startdrawing;
 		"hello world".drawtext(100,200);//TODO: cleanup
-		auto foo=str;
+		str!() foo;
 		foo~="raylib ";
 		foo~=5.0;
 		foo~="!!!!!!!";
@@ -21,7 +21,7 @@ void main_(){// hack for making swapping between wasm and native work
 		highlight++;text++;
 		bar.drawtext(200,216);
 		resetcolors;
-		drawtext(str~1000~','~1337,400,500);
+		drawtext(mystr~1000~','~1337,400,500);
 		enddrawing;
 	}
 	CloseWindow();

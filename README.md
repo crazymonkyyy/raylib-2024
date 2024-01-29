@@ -11,8 +11,8 @@ rm -rf .git
 ./biuld examples/001-helloworld
 ```
 
-## features:
-TODO:
+## Doc links
+
 
 ## biulding
 
@@ -36,8 +36,8 @@ For big projects I dont want todo:
 
 ## declaring alpha and anouncing it todo list
 
-* ~~website + demos (even if ugly defualt enscription webpage)~~ shipping to itch is acceptable alteritive
 * readme todos
+* some docs
 
 ## beta todo list
 
