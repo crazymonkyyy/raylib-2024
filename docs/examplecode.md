@@ -8,26 +8,26 @@ examples are surprizinly in the examples folder, this is the expected output and
 
 Drawing text, some random syntax for my string type, and colors; messy rn
 
-## drawtest
+## [drawtest](../examples/002-drawtest.d)
 
 ![](drawtest.png)
 
 the api I had in mind depends on named arguments working with templates; they dont,
 waiting on if that changes before making a complicated workaround
 
-## buttons and messages
+## [buttons and messages](../examples/003-buttons-and-messages.d)
 
 (interactive but boring skiping image)
 
 status and button syntax, read the damn code and trust
 
-## debuging
+## [debuging](../examples/004-debuging.d)
 
 (interactive but boring skiping image)
 
 using "watch" to add a varible to the debug menu on F2
 
-## missle command
+## [missle command](../examples/005-misslecommand.d)
 
 ![](missle.gif)
 
