@@ -75,7 +75,7 @@ a way to draw a (up to 9) ubyte[256] with some visualizations to get a feel for 
 
 Not wasm rn because file io sux and work in progress
 
-##[snake](../examples/015-snake.d)
+## [snake](../examples/015-snake.d)
 
 ![](snake.gif)
 
