@@ -53,10 +53,32 @@ sprite sheet loading
 
 single line typing
 
-## [keybinding tools](..examples/009-keybindingstool.d)
+## [keybinding tool](../examples/009-keybindingstool.d)
 
 ![](keybinds.gif)
 
 https://monkyyy.itch.io/keybinding-tool
 
-Tool for making keybindings
+Tool for making keybindings graphics
+
+## [key rampup](../examples/010-key-rampup.d)
+
+![](ramp.gif)
+
+keys presses with more personablity, these abstractions instead of a bool return a ubyte, for how long its been held down which leads to =>
+
+## [curve drawing](../examples/011-curvedrawing.d)
+
+![](curves.gif)
+
+a way to draw a (up to 9) ubyte[256] with some visualizations to get a feel for it; combine it with key binds ramps to make some quick and dirty game feel, or color remaping, or just some data
+
+Not wasm rn because file io sux and work in progress
+
+##[snake](../examples/015-snake.d)
+
+![](snake.gif)
+
+https://monkyyy.itch.io/snake
+
+tank controls snake with lookup tables and key ramping, messy for wasm compadity
