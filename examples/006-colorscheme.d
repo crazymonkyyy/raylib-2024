@@ -14,7 +14,7 @@ void main_(){// hack for making swapping between wasm and native work
 			DrawRectangle(150,100+50*i,200,40,background);
 			DrawRectangleLinesEx(Rectangle(150,100+50*i,200,40),i,highlight++);
 			
-			(str()~i~" : is being drawn").drawtext(160,110+50*i,16,text++,background++);
+			(mystr~i~" : is being drawn").drawtext(160,110+50*i,16,text++,background++);
 		}
 		enddrawing;
 	}

@@ -35,5 +35,28 @@ https://monkyyy.itch.io/test-wasm-missle-command
 
 Simple dumb game, showing patterns for how id use colors, a data stucture
 
+## [colorscheme](../examples/006-colorscheme.d)
 
+![](colors.gif)
 
+showings the colorschemes, and some color syntax
+
+## [sprites](../examples/007-sprites.d)
+
+![](sprites.gif)
+
+sprite sheet loading
+
+## [typing](../examples/008-typing.d)
+
+![](type.gif)
+
+single line typing
+
+## [keybinding tools](..examples/009-keybindingstool.d)
+
+![](keybinds.gif)
+
+https://monkyyy.itch.io/keybinding-tool
+
+Tool for making keybindings
