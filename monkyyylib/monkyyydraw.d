@@ -1,3 +1,6 @@
+// TODO: wait on named arguments templates or find out how to extract the infomation
+// rn it will break when you try to bring the pieces together natively
+
 import raylib;
 import monkyyycolor;
 import staticabstractions;

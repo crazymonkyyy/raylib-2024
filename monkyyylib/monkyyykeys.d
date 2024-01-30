@@ -1,3 +1,5 @@
+// `with(button){if(ctrl+c)` magic syntax for buttons
+
 import raylib;
 version(D_BetterC){
 	import staticsizedata;

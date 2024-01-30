@@ -1,3 +1,5 @@
+// here be dragons, made of glass; if your an end user you shouldnt be here, ask me if someone wants an explaination for how things work
+
 import monkyyydraw;
 import mystring;
 import staticabstractions;

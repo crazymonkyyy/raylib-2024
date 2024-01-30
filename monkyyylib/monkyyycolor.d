@@ -1,3 +1,5 @@
+// colorscheme definations, in thoery you can pass in more or expand this but its untested
+
 import raylib;
 struct colorscheme{
 	string name;

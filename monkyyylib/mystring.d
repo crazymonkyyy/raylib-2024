@@ -1,3 +1,5 @@
+//string type for surviving without gc and passing c strings to raylib draw functions
+
 //should be temporary, probaly wont be
 bool bigint(int i){
 	return i>10_000_000;

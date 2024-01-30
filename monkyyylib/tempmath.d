@@ -1,3 +1,5 @@
+//libc-less math, probaly low quality in lots of ways
+
 import basic;
 T abs(T)(T a){
 	if(a>0){return a;}
