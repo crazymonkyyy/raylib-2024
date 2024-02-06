@@ -10,8 +10,12 @@ void swap(T)(T a,T b){
 	a=b;
 	b=t;
 }
-auto dis(Vector2 a,Vector2 b){
+auto dis(Vector2 a,Vector2 b=Vector2(0,0)){
 	return abs(a.x-b.x)+abs(a.y-b.y);
+}
+auto norm(Vector2 a){
+	auto n=(abs(a.x)+abs(a.y)).mordenisqrt;
+	return Vector2(a.x*n,a.y*n);
 }
 T lerp(T)(T a, T b, float t){
 	return a +cast(T)((b-a)*t);
@@ -128,3 +132,25 @@ auto tostringblob(T,size_t N)(T[N] data...){
 	import std;
 	[1,2,1337].tostringblob.writeln;
 }*/
+ref T recast(T,S)(ref S s){
+	return *cast(T*)(&s);
+}
+float isqrt(int iterations,long consant=0x5f3759df,float threehalfs=1.5,float onehalf=.5)(float f){
+	long i;
+	static if(iterations>0){
+		float x2;
+		x2=f*onehalf;
+		const float threehalfs_=threehalfs;
+	}
+	i=f.recast!long;
+	i=consant - (i>>1); // "what the fuck?" -saint carmack
+	f=i.recast!float;
+	static foreach(_;0..iterations){
+		f=f*(threehalfs_-(x2*f*f));
+	}
+	return f.abs;//TODO: find out why theres negitive answer coming thru, .3, .5
+}
+alias quakeisqrt=isqrt!1;
+alias quake2isqrt=isqrt!2;
+alias mkyisqrt=isqrt!(0,0x5f32f948);
+alias mordenisqrt=isqrt!(3,0x5f2fed52,1.55452,0.55570);

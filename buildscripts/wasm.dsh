@@ -1,5 +1,5 @@
 source /etc/profile.d/emscripten.sh
 rm *.o
 ldc2 -I./lib -I./raylib -I./monkyyylib -c -betterC -mtriple=wasm32-unknown-unknown-wasm -i -checkaction=halt -mixin=mix $file 
-emcc -o index.html *.o libraylib.a -s USE_GLFW=3 -s ASYNCIFY --preload-file assets
+emcc -o index.html *.o libraylib.a -s USE_GLFW=3 -s ASYNCIFY -sGL_ENABLE_GET_PROC_ADDRESS --preload-file assets
 xdg-open http://0.0.0.0:8000

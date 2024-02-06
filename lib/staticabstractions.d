@@ -49,7 +49,7 @@ struct stickyindex(alias A,int low=0,size_t high=A.length){
 		index=i%(high-low);
 		return A[low..high][index];
 	}
-	ref opIndex(size_t i)=> this[cast(int)i];
+	ref opIndex(ulong i)=> this[cast(int)i];
 	ref __get__(){
 		return A[low..high][index];
 	}
