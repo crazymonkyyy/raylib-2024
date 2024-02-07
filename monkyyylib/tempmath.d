@@ -72,7 +72,11 @@ T min(T)(T[] a...){
 	return o;
 }
 T max(T)(T[] a...){
-	T o=T.min;
+	static if(is(T==float)){// TODO: UGH fucking basetypes inconsistencies
+		T o=-float.infinity;
+	} else {
+		T o=T.min;
+	}
 	foreach(e;a){
 		if(e>o){o=e;}
 	}
