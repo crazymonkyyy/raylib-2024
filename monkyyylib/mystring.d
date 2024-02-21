@@ -77,6 +77,10 @@ struct str(int N=80){
 	void opOpAssign(string op: "~",T:double)(T f){
 		this~=cast(float)f;
 	}
+	void opAssign(T)(T t){
+		length=0;
+		this~=t;
+	}
 	ref opBinary(string op: "~",T)(T t){
 		if(length<=N){
 			this~=t;

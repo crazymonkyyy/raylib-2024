@@ -1,9 +1,9 @@
 import basic;
 import tempmath;
 mixin mainhack!();
-enum smallest=8;
-enum incrment=5;
-enum left=200;
+enum smallest=9;
+enum incrment=8;
+enum left=300;
 enum right=750;
 enum bot=600;
 enum top=100;
@@ -123,9 +123,15 @@ void main_(){
 	next.v=Vector2(0,10);
 	next.color_=3;
 	auto logo=LoadTexture("assets/logo.png");
+	auto keys=LoadTexture("assets/keybinds.png");
+	auto happy=LoadSound("assets/happy.wav");
+	auto music=LoadMusicStream("assets/IceCream.mp3");
+	PlayMusicStream(music);
 	while (!WindowShouldClose()){
+		UpdateMusicStream(music);
 		startdrawing;
 		DrawTextureEx(logo,Vector2(0,0),0,.25,Colors.WHITE);
+		DrawTextureEx(keys,Vector2(0,300),0,.75,Colors.WHITE);
 		drawH(left,top,right-left,bot-top);
 		foreach(i,_;balls){
 			foreach(j,__;balls){
@@ -160,14 +166,26 @@ void main_(){
 		next.draw(false);
 		with(button){
 		if(mouse1.pressed ||mouse1.ramp>30){
-			loop:
+			bool collide=false;
+			int mergecount=0;
+			foreach(i,e;balls){
+				if(e.color_==next.color_){
+					mergecount+=CheckCollisionCircles(e.p,e.size*1.1,next.p,next.size*1.1);
+				} else {
+					collide|=CheckCollisionCircles(e.p,e.size*.9,next.p,next.size*.9);
+				}
+			}
+			if(collide && mergecount<2){}
+			else{
+			PlaySound(happy);
+			//loop:
 			balls~=next;
 			next.color_=cast(ubyte)min(GetRandomValue(0,12),GetRandomValue(0,6));
 			//next.color_=cast(ubyte)GetRandomValue(0,24);
 			//if(space.toggle &&GetRandomValue(0,10000)!=0){
 			//	goto loop;
 			//}
-		}
+		}}
 		if(f3){
 			foreach(i,_;balls){
 				if(_.fren!=-1)

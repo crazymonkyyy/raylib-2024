@@ -43,6 +43,7 @@ enum isIter(R)=is(typeof(
 	}));
 enum hasIndex(R)=is(typeof((R r)=>r.index));
 auto counter(int i)=> counter(0,i);
+auto counter(ulong i)=> counter(cast(int)i);
 auto counter(int f,int e){
 	//import std; writeln(f,e);
 	struct counter_{
@@ -174,10 +175,11 @@ auto toiter(T)(T[] r...){
 	return iter(r);
 }
 auto array(R)(R r){
-	typeof(r.front())[] data;
+	typeof(r.front)[] data;
 	//data.capisity=r.length
 	foreach(e;r.tophoboes){
 		data~=e;
 	}
 	return data;
 }
+

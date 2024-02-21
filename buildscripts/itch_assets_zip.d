@@ -3,7 +3,7 @@ import myalgorithms:elementslice;
 
 void main(string[] s){
 	"rm itch_assets_zip.o".executeShell;
-	["emcc --shell-file=buildscripts/itch.html -o index.html *.o libraylib.a -s USE_GLFW=3 -s ASYNCIFY "].chain(
+	["emcc --shell-file=buildscripts/itch.html -sGL_ENABLE_GET_PROC_ADDRESS -o index.html *.o libraylib.a -s USE_GLFW=3 -s ASYNCIFY "].chain(
 	File(s[1]).byLineCopy
 		.map!(a=>a.elementslice!".byascii"('"','"'))
 		.filter!(a=>a.length>"assets".length)

@@ -82,3 +82,7 @@ Not wasm rn because file io sux and work in progress
 https://monkyyy.itch.io/snake
 
 tank controls snake with lookup tables and key ramping, messy for wasm compadity
+
+## [music](../examples/016-music.d)
+
+reusable musicbox
