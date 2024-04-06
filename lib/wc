@@ -1,0 +1,125 @@
+(spec:1) minstd2.d(91): Error: no `[]` operator overload for type `Counter!int`
+(spec:1) minstd2.d(92): Error: no `[]` operator overload for type `Counter!int`
+(spec:1) minstd2.d(93): Error: no `[]` operator overload for type `Counter!int`
+(spec:1) minstd2.d(94): Error: no `[]` operator overload for type `Counter!int`
+(spec:1) minstd2.d(91): Error: no `[]` operator overload for type `Filter`
+(spec:1) minstd2.d(92): Error: no `[]` operator overload for type `Filter`
+(spec:1) minstd2.d(93): Error: no `[]` operator overload for type `Filter`
+(spec:1) minstd2.d(94): Error: no `[]` operator overload for type `Filter`
+(spec:1) minstd2.d(97): Error: no `[]` operator overload for type `Filter`
+(spec:1) minstd2.d(98): Error: no `[]` operator overload for type `Filter`
+(spec:1) minstd2.d(99): Error: no property `half1` for `r` of type `minstd2.__unittest_L412_C1.filter!((a) => a % 2, Counter!int).filter.Filter`
+(spec:1) minstd2.d(418):        struct `Filter` defined here
+(spec:1) minstd2.d(100): Error: no property `half2` for `r` of type `minstd2.__unittest_L412_C1.filter!((a) => a % 2, Counter!int).filter.Filter`
+(spec:1) minstd2.d(418):        struct `Filter` defined here
+(spec:1) minstd2.d(97): Error: no `[]` operator overload for type `Map`
+(spec:1) minstd2.d(98): Error: no `[]` operator overload for type `Map`
+(spec:1) minstd2.d(99): Error: no property `half1` for `r` of type `minstd2.__unittest_L412_C1.map!((a) => a * a, __lambda59, Filter).map.Map`
+(spec:1) minstd2.d(381):        struct `Map` defined here
+(spec:1) minstd2.d(100): Error: no property `half2` for `r` of type `minstd2.__unittest_L412_C1.map!((a) => a * a, __lambda59, Filter).map.Map`
+(spec:1) minstd2.d(381):        struct `Map` defined here
+(spec:1) minstd2.d(85): Error: no property `empty` for type `string`, perhaps `import std.range;` is needed?
+(spec:1) minstd2.d(86): Error: no property `front` for type `string`, perhaps `import std.range;` is needed?
+(spec:1) minstd2.d(87): Error: no property `pop` for `r` of type `string`
+(spec:1) minstd2.d(94): Error: no property `front` for type `string`, perhaps `import std.range;` is needed?
+(spec:1) minstd2.d(97): Error: no property `key` for `r[]` of type `string`
+(spec:1) minstd2.d(99): Error: no property `half1` for `r` of type `string`
+(spec:1) minstd2.d(100): Error: no property `half2` for `r` of type `string`
+(spec:1) /usr/include/dlang/dmd/core/stdc/stdint.d(40): Error: `cent` and `ucent` types are obsolete, use `core.int128.Cent` instead
+(spec:1) /usr/include/dlang/dmd/std/traits.d(189): Error: `cent` and `ucent` types are obsolete, use `core.int128.Cent` instead
+(spec:1) /usr/include/dlang/dmd/std/typecons.d(8631): Error: cannot take address of local `x` in `@safe` function `__lambda311`
+(spec:2) /usr/include/dlang/dmd/std/range/primitives.d(298): Error: template instance `PointerTarget!(LockingTextWriter)` does not match template declaration `PointerTarget(T : T*)`
+(spec:2) /usr/include/dlang/dmd/std/range/primitives.d(298): Error: template instance `PointerTarget!(LockingTextWriter)` cannot resolve forward reference
+(spec:4) /usr/include/dlang/dmd/std/range/primitives.d(178): Error: cannot `ref` return expression `front(r)` because it is not an lvalue
+(spec:6) /usr/include/dlang/dmd/std/traits.d(8302): Error: no property `min_normal` for type `ulong`
+(spec:6) /usr/include/dlang/dmd/std/traits.d(8302): Error: no property `min_normal` for type `immutable(int)`
+(spec:4) /usr/include/dlang/dmd/core/internal/traits.d(453): Error: cannot take address of type `std.utf.UTFException`
+(spec:5) /usr/include/dlang/dmd/core/internal/traits.d(433): Error: static assert:  "UTFException does not have alias this type"
+(spec:5) /usr/include/dlang/dmd/core/internal/traits.d(414): Error: template instance `core.internal.traits.AliasThisTypeOf!(UTFException)` error instantiating
+(spec:5) /usr/include/dlang/dmd/core/internal/traits.d(414): Error: template instance `core.internal.traits.AliasThisTypeOf!(UTFException)` cannot resolve forward reference
+(spec:4) /usr/include/dlang/dmd/core/internal/traits.d(422): Error: static assert:  "UTFException is not a dynamic array"
+(spec:4) /usr/include/dlang/dmd/core/internal/traits.d(399): Error: template instance `core.internal.traits.DynamicArrayTypeOf!(UTFException)` error instantiating
+(spec:4) /usr/include/dlang/dmd/core/internal/traits.d(399): Error: template instance `core.internal.traits.DynamicArrayTypeOf!(UTFException)` cannot resolve forward reference
+(spec:3) /usr/include/dlang/dmd/std/range/primitives.d(178): Error: cannot `ref` return expression `front(cast(const(char)[])r)` because it is not an lvalue
+(spec:3) /usr/include/dlang/dmd/std/range/primitives.d(1676): Error: no property `empty` for type `string`, perhaps `import std.range;` is needed?
+(spec:3) /usr/include/dlang/dmd/core/internal/traits.d(453): Error: cannot take address of type `std.exception.ErrnoException`
+(spec:4) /usr/include/dlang/dmd/core/internal/traits.d(433): Error: static assert:  "ErrnoException does not have alias this type"
+(spec:4) /usr/include/dlang/dmd/core/internal/traits.d(414): Error: template instance `core.internal.traits.AliasThisTypeOf!(ErrnoException)` error instantiating
+(spec:4) /usr/include/dlang/dmd/core/internal/traits.d(414): Error: template instance `core.internal.traits.AliasThisTypeOf!(ErrnoException)` cannot resolve forward reference
+(spec:3) /usr/include/dlang/dmd/core/internal/traits.d(422): Error: static assert:  "ErrnoException is not a dynamic array"
+(spec:3) /usr/include/dlang/dmd/core/internal/traits.d(399): Error: template instance `core.internal.traits.DynamicArrayTypeOf!(ErrnoException)` error instantiating
+(spec:3) /usr/include/dlang/dmd/core/internal/traits.d(399): Error: template instance `core.internal.traits.DynamicArrayTypeOf!(ErrnoException)` cannot resolve forward reference
+(spec:3) /usr/include/dlang/dmd/std/range/primitives.d(1317): Error: none of the overloads of template `std.range.primitives.front` are callable using argument types `!()(immutable(char))`
+(spec:3) /usr/include/dlang/dmd/std/range/primitives.d(2516):        Candidates are: `front(T)(return scope inout(T)[] a)`
+  with `T = char`
+  must satisfy the following constraint:
+`       !isAutodecodableString!(T[])`
+(spec:3) /usr/include/dlang/dmd/std/range/primitives.d(2545):                        `front(T)(scope const(T)[] a)`
+(spec:3) /usr/include/dlang/dmd/std/range/primitives.d(178): Error: cannot `ref` return expression `front(cast(const(char)[])r)` because it is not an lvalue
+(spec:1) minstd2.d(352): Error: no `[]` operator overload for type `Map`
+(spec:1) minstd2.d(85): Error: no property `empty` for type `bool`, perhaps `import std.range;` is needed?
+(spec:1) minstd2.d(86): Error: no property `front` for type `bool`, perhaps `import std.range;` is needed?
+(spec:1) minstd2.d(87): Error: no property `pop` for `r` of type `bool`
+(spec:1) minstd2.d(91): Error: cannot use `[]` operator on expression of type `bool`
+(spec:1) minstd2.d(92): Error: cannot use `[]` operator on expression of type `bool`
+(spec:1) minstd2.d(93): Error: cannot use `[]` operator on expression of type `bool`
+(spec:1) minstd2.d(94): Error: cannot use `[]` operator on expression of type `bool`
+(spec:1) minstd2.d(97): Error: cannot use `[]` operator on expression of type `bool`
+(spec:1) minstd2.d(98): Error: cannot use `[]` operator on expression of type `bool`
+(spec:1) minstd2.d(99): Error: no property `half1` for `r` of type `bool`
+(spec:1) minstd2.d(100): Error: no property `half2` for `r` of type `bool`
+(spec:1) /usr/include/dlang/dmd/std/traits.d(6689): Error: undefined identifier `C`
+(spec:1) /usr/include/dlang/dmd/std/traits.d(6689): Error: undefined identifier `C`
+(spec:1) /usr/include/dlang/dmd/std/traits.d(6689): Error: undefined identifier `C`
+(spec:1) minstd2.d(353): Error: no `[]` operator overload for type `Map`
+(spec:1) minstd2.d(353): Error: no `[]` operator overload for type `Map`
+(spec:1) minstd2.d(354): Error: no property `half1` for `r` of type `minstd2.__unittest_L412_C1.map!((a) => a * a, __lambda59, Filter).map.Map`
+(spec:1) minstd2.d(381):        struct `Map` defined here
+(spec:1) minstd2.d(355): Error: no property `half2` for `r` of type `minstd2.__unittest_L412_C1.map!((a) => a * a, __lambda59, Filter).map.Map`
+(spec:1) minstd2.d(381):        struct `Map` defined here
+(spec:1) minstd2.d(356): Error: no `[]` operator overload for type `Map`
+minstd2.d(358): Error: no `[]` operator overload for type `Map`
+(spec:1) minstd2.d(85): Error: no property `empty` for type `char`, perhaps `import std.range;` is needed?
+(spec:1) minstd2.d(86): Error: no property `front` for type `char`, perhaps `import std.range;` is needed?
+(spec:1) minstd2.d(87): Error: no property `pop` for `r` of type `char`
+(spec:1) minstd2.d(91): Error: cannot use `[]` operator on expression of type `char`
+(spec:1) minstd2.d(92): Error: cannot use `[]` operator on expression of type `char`
+(spec:1) minstd2.d(93): Error: cannot use `[]` operator on expression of type `char`
+(spec:1) minstd2.d(94): Error: cannot use `[]` operator on expression of type `char`
+(spec:1) minstd2.d(97): Error: cannot use `[]` operator on expression of type `char`
+(spec:1) minstd2.d(98): Error: cannot use `[]` operator on expression of type `char`
+(spec:1) minstd2.d(99): Error: no property `half1` for `r` of type `char`
+(spec:1) minstd2.d(100): Error: no property `half2` for `r` of type `char`
+(spec:1) /usr/include/dlang/dmd/std/traits.d(6689): Error: undefined identifier `C`
+(spec:1) /usr/include/dlang/dmd/std/traits.d(6689): Error: undefined identifier `C`
+(spec:1) /usr/include/dlang/dmd/std/traits.d(6689): Error: undefined identifier `C`
+(spec:2) /usr/include/dlang/dmd/std/range/primitives.d(298): Error: template instance `PointerTarget!(LockingTextWriter)` does not match template declaration `PointerTarget(T : T*)`
+(spec:2) /usr/include/dlang/dmd/std/range/primitives.d(298): Error: template instance `PointerTarget!(LockingTextWriter)` cannot resolve forward reference
+(spec:3) /usr/include/dlang/dmd/std/range/primitives.d(1317): Error: none of the overloads of template `std.range.primitives.front` are callable using argument types `!()(char)`
+(spec:3) /usr/include/dlang/dmd/std/range/primitives.d(2516):        Candidates are: `front(T)(return scope inout(T)[] a)`
+  with `T = char`
+  must satisfy the following constraint:
+`       !isAutodecodableString!(T[])`
+(spec:3) /usr/include/dlang/dmd/std/range/primitives.d(2545):                        `front(T)(scope const(T)[] a)`
+minstd2.d(364): Error: no `[]` operator overload for type `Map`
+minstd2.d(415): Error: template instance `minstd2.forcesparceprint!(Map)` error instantiating
+(spec:1) minstd2.d(45): Error: no property `istuple` for `a` of type `int`
+(spec:1) minstd2.d(46): Error: no property `istuple` for `a` of type `int`
+(spec:1) minstd2.d(91): Error: no `[]` operator overload for type `accumulate`
+(spec:1) minstd2.d(92): Error: no `[]` operator overload for type `accumulate`
+(spec:1) minstd2.d(93): Error: no `[]` operator overload for type `accumulate`
+(spec:1) minstd2.d(94): Error: no `[]` operator overload for type `accumulate`
+(spec:1) minstd2.d(91): Error: no `[]` operator overload for type `range`
+(spec:1) minstd2.d(92): Error: no `[]` operator overload for type `range`
+(spec:1) minstd2.d(93): Error: no `[]` operator overload for type `range`
+(spec:1) minstd2.d(94): Error: no `[]` operator overload for type `range`
+(spec:1) minstd2.d(97): Error: no `[]` operator overload for type `range`
+(spec:1) minstd2.d(98): Error: no `[]` operator overload for type `range`
+(spec:1) minstd2.d(99): Error: no property `half1` for `r` of type `minstd2.torange!int.torange.range`
+(spec:1) minstd2.d(125):        struct `range` defined here
+(spec:1) minstd2.d(100): Error: no property `half2` for `r` of type `minstd2.torange!int.torange.range`
+(spec:1) minstd2.d(125):        struct `range` defined here
+(spec:1) minstd2.d(91): Error: no `[]` operator overload for type `Map`
+(spec:1) minstd2.d(92): Error: no `[]` operator overload for type `Map`
+(spec:1) minstd2.d(93): Error: no `[]` operator overload for type `Map`
+(spec:1) minstd2.d(94): Error: no `[]` operator overload for type `Map`

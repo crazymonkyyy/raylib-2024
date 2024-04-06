@@ -1,36 +1,410 @@
+// expansion at /usr/include/dlang/dmd/std/format/spec.d(170)
+private ubyte _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf;@property bool flDash() @safe pure nothrow @nogc const { return (_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf & 1U) != 0;}
+@property void flDash(bool v) @safe pure nothrow @nogc { if (v) _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf |= 1U;else _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf &= cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))(-1-cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))1U);}
+@property bool flZero() @safe pure nothrow @nogc const { return (_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf & 2U) != 0;}
+@property void flZero(bool v) @safe pure nothrow @nogc { if (v) _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf |= 2U;else _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf &= cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))(-1-cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))2U);}
+@property bool flSpace() @safe pure nothrow @nogc const { return (_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf & 4U) != 0;}
+@property void flSpace(bool v) @safe pure nothrow @nogc { if (v) _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf |= 4U;else _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf &= cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))(-1-cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))4U);}
+@property bool flPlus() @safe pure nothrow @nogc const { return (_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf & 8U) != 0;}
+@property void flPlus(bool v) @safe pure nothrow @nogc { if (v) _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf |= 8U;else _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf &= cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))(-1-cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))8U);}
+@property bool flHash() @safe pure nothrow @nogc const { return (_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf & 16U) != 0;}
+@property void flHash(bool v) @safe pure nothrow @nogc { if (v) _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf |= 16U;else _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf &= cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))(-1-cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))16U);}
+@property bool flEqual() @safe pure nothrow @nogc const { return (_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf & 32U) != 0;}
+@property void flEqual(bool v) @safe pure nothrow @nogc { if (v) _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf |= 32U;else _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf &= cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))(-1-cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))32U);}
+@property bool flSeparator() @safe pure nothrow @nogc const { return (_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf & 64U) != 0;}
+@property void flSeparator(bool v) @safe pure nothrow @nogc { if (v) _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf |= 64U;else _flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf &= cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))(-1-cast(typeof(_flDash_flZero_flSpace_flPlus_flHash_flEqual_flSeparator__bf))64U);}
+
+// expansion at /usr/include/dlang/dmd/std/variant.d(90)
+T _field_0LU;
+
+// expansion at /usr/include/dlang/dmd/std/variant.d(90)
+T _field_1LU;
+
+// expansion at /usr/include/dlang/dmd/std/variant.d(90)
+T _field_2LU;
+
+// expansion at /usr/include/dlang/dmd/core/internal/atomic.d(502)
+
+                asm pure nothrow @nogc @trusted
+                {
+                    mov DL, value;
+                    mov AL, compare;
+
+                    mov RCX, dest;
+                    lock; cmpxchg [RCX], DL;
+
+                    setz success;
+                }
+
+
+// expansion at /usr/include/dlang/dmd/core/internal/atomic.d(502)
+
+                asm pure nothrow @nogc @trusted
+                {
+                    mov DX, value;
+                    mov AX, compare;
+
+                    mov RCX, dest;
+                    lock; cmpxchg [RCX], DX;
+
+                    setz success;
+                }
+
+
+// expansion at /usr/include/dlang/dmd/core/internal/atomic.d(502)
+
+                asm pure nothrow @nogc @trusted
+                {
+                    mov RDX, value;
+                    mov RAX, compare;
+
+                    mov RCX, dest;
+                    lock; cmpxchg [RCX], RDX;
+
+                    setz success;
+                }
+
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(467)
+enum int schema = 0;
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(467)
+enum int sequence = 0;
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(646)
+alias _0LU = Identity!(field[0LU]);alias schema = _0LU;alias _1LU = Identity!(field[1LU]);alias sequence = _1LU;
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(646)
+alias _0LU = Identity!(field[0LU]);alias _1LU = Identity!(field[1LU]);
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/getopt.d(1103)
+private ubyte _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf;@property bool caseSensitive() @safe pure nothrow @nogc const { return (_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf & 1U) != 0;}
+@property void caseSensitive(bool v) @safe pure nothrow @nogc { if (v) _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf |= 1U;else _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf &= cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))(-1-cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))1U);}
+@property bool bundling() @safe pure nothrow @nogc const { return (_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf & 2U) != 0;}
+@property void bundling(bool v) @safe pure nothrow @nogc { if (v) _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf |= 2U;else _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf &= cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))(-1-cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))2U);}
+@property bool passThrough() @safe pure nothrow @nogc const { return (_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf & 4U) != 0;}
+@property void passThrough(bool v) @safe pure nothrow @nogc { if (v) _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf |= 4U;else _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf &= cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))(-1-cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))4U);}
+@property bool stopOnFirstNonOption() @safe pure nothrow @nogc const { return (_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf & 8U) != 0;}
+@property void stopOnFirstNonOption(bool v) @safe pure nothrow @nogc { if (v) _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf |= 8U;else _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf &= cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))(-1-cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))8U);}
+@property bool keepEndOfOptions() @safe pure nothrow @nogc const { return (_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf & 16U) != 0;}
+@property void keepEndOfOptions(bool v) @safe pure nothrow @nogc { if (v) _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf |= 16U;else _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf &= cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))(-1-cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))16U);}
+@property bool required() @safe pure nothrow @nogc const { return (_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf & 32U) != 0;}
+@property void required(bool v) @safe pure nothrow @nogc { if (v) _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf |= 32U;else _caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf &= cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))(-1-cast(typeof(_caseSensitive_bundling_passThrough_stopOnFirstNonOption_keepEndOfOptions_required__bf))32U);}
+
+// expansion at /usr/include/dlang/dmd/std/internal/memory.d(40)
+onOutOfMemoryError();
+
+// expansion at /usr/include/dlang/dmd/core/atomic.d(542)
+*cast(T*)&val+=mod
+
+// expansion at /usr/include/dlang/dmd/core/internal/atomic.d(264)
+
+                asm pure nothrow @nogc @trusted
+                {
+                    naked;
+                    lock; xadd[RSI], EDI;
+                    mov EAX, EDI;
+                    ret;
+                }
+
+
+// expansion at /usr/include/dlang/dmd/std/stdio.d(5251)
+core.stdc.stdio.stdin
+
+// expansion at /usr/include/dlang/dmd/core/atomic.d(542)
+*cast(T*)&val+=mod
+
+// expansion at /usr/include/dlang/dmd/core/atomic.d(542)
+*cast(T*)&val-=mod
+
+// expansion at /usr/include/dlang/dmd/core/atomic.d(542)
+*cast(T*)&val+=mod
+
+// expansion at /usr/include/dlang/dmd/std/stdio.d(5251)
+core.stdc.stdio.stdout
+
+// expansion at /usr/include/dlang/dmd/core/atomic.d(542)
+*cast(T*)&val+=mod
+
+// expansion at /usr/include/dlang/dmd/core/atomic.d(542)
+*cast(T*)&val-=mod
+
+// expansion at /usr/include/dlang/dmd/core/atomic.d(542)
+*cast(T*)&val+=mod
+
+// expansion at /usr/include/dlang/dmd/std/stdio.d(5251)
+core.stdc.stdio.stderr
+
+// expansion at /usr/include/dlang/dmd/core/atomic.d(542)
+*cast(T*)&val+=mod
+
+// expansion at /usr/include/dlang/dmd/core/atomic.d(542)
+*cast(T*)&val-=mod
+
+// expansion at /usr/include/dlang/dmd/std/functional.d(452)
+cast(T)a < cast(T) b
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(646)
+alias _0LU = Identity!(field[0LU]);alias _1LU = Identity!(field[1LU]);
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(646)
+alias _0LU = Identity!(field[0LU]);alias _1LU = Identity!(field[1LU]);
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/functional.d(452)
+cast(T)a < cast(T) b
+
 // expansion at ./lib/namedcounter.d(21)
 __LINE__
 
 // expansion at ./lib/namedcounter.d(12)
 __LINE__
 
-// expansion at ./monkyyylib/monkyyycolor.d(40)
-case 0u: activecolorscheme =dune;
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs < rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs < rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs < rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs < rhs
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at raylib/raymathext.d(91)
+T(0,)
+
+// expansion at raylib/raymathext.d(102)
+T(1,)
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at raylib/raymathext.d(91)
+T(0,0,0,)
+
+// expansion at raylib/raymathext.d(102)
+T(1,1,1,)
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at raylib/raymathext.d(91)
+T(0,0,0,0,)
+
+// expansion at raylib/raymathext.d(102)
+T(1,1,1,1,)
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at raylib/raymathext.d(91)
+T(0,0,)
+
+// expansion at raylib/raymathext.d(102)
+T(1,1,)
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at raylib/raymathext.d(91)
+T(0,0,0,)
+
+// expansion at raylib/raymathext.d(102)
+T(1,1,1,)
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at raylib/raymathext.d(91)
+T(0,0,0,0,)
+
+// expansion at raylib/raymathext.d(102)
+T(1,1,1,1,)
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
 
 // expansion at ./monkyyylib/monkyyycolor.d(40)
-case 1u: activecolorscheme =darkviolet;
+case 0LU: activecolorscheme =dune;
 
 // expansion at ./monkyyylib/monkyyycolor.d(40)
-case 2u: activecolorscheme =gruvboxdark;
+case 1LU: activecolorscheme =darkviolet;
 
 // expansion at ./monkyyylib/monkyyycolor.d(40)
-case 3u: activecolorscheme =gruvboxlight;
+case 2LU: activecolorscheme =gruvboxdark;
 
 // expansion at ./monkyyylib/monkyyycolor.d(40)
-case 4u: activecolorscheme =horizon;
+case 3LU: activecolorscheme =gruvboxlight;
 
 // expansion at ./monkyyylib/monkyyycolor.d(40)
-case 5u: activecolorscheme =mocha;
+case 4LU: activecolorscheme =horizon;
 
 // expansion at ./monkyyylib/monkyyycolor.d(40)
-case 6u: activecolorscheme =nord;
+case 5LU: activecolorscheme =mocha;
 
 // expansion at ./monkyyylib/monkyyycolor.d(40)
-case 7u: activecolorscheme =onedark;
+case 6LU: activecolorscheme =nord;
 
 // expansion at ./monkyyylib/monkyyycolor.d(40)
-case 8u: activecolorscheme =solarizeddark;
+case 7LU: activecolorscheme =onedark;
 
 // expansion at ./monkyyylib/monkyyycolor.d(40)
-case 9u: activecolorscheme =solarizedlight;
+case 8LU: activecolorscheme =solarizeddark;
+
+// expansion at ./monkyyylib/monkyyycolor.d(40)
+case 9LU: activecolorscheme =solarizedlight;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs == rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs < rhs
+
+// expansion at /usr/include/dlang/dmd/std/typecons.d(539)
+lhs < rhs
+
+// expansion at
+.object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
 

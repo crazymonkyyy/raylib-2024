@@ -50,6 +50,14 @@ void startdrawing(){
 	BeginDrawing();
 	ClearBackground(background);
 }
+//void startdrawingfading(ubyte a){
+//	resetcolors;
+//	BeginDrawing();
+//	auto c=background;
+//	c.a=a;
+//	//ClearBackground(background);
+//	//DrawRectangle(0,0,GetScreenWidth,GetScreenHeight,c);
+//}
 void enddrawing(){
 	if(button.f9.pressed){
 		swapcolorscheme;
