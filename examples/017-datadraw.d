@@ -9,6 +9,9 @@ void fill(ref lookuptable i){
 		i[j]=j;
 	}
 }
+float remap(float input,ref lookuptable where,float minin,float maxin,float minout,float maxout){
+	return input;
+}
 
 void main_(){// hack for making swapping between wasm and native work
 	makewindow;
