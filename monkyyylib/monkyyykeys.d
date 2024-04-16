@@ -21,6 +21,10 @@ struct button_{
 		if(ismouse){return IsMouseButtonPressed(which);}
 		return IsKeyPressed(which);
 	}
+	bool released(){
+		if(ismouse){return IsMouseButtonReleased(which);}
+		return IsKeyReleased(which);
+	}
 	bool down(){
 		if(ismouse){return IsMouseButtonDown(which);}
 		return IsKeyDown(which);
@@ -94,6 +98,13 @@ struct buttoncord{
 		foreach(a;me[0..$-1]){
 			if(!a.down){return false;}}
 		return me[$-1].pressed;
+	}
+	bool released(){
+		foreach(a;notme){
+			if(a.down){return false;}}
+		foreach(a;me[0..$-1]){
+			if(!a.down){return false;}}
+		return me[$-1].released;
 	}
 }
 
