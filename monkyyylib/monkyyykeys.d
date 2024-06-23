@@ -106,6 +106,13 @@ struct buttoncord{
 			if(!a.down){return false;}}
 		return me[$-1].released;
 	}
+	bool down(){
+		foreach(a;notme){
+			if(a.down){return false;}}
+		foreach(a;me[]){
+			if(!a.down){return false;}}
+		return true;
+	}
 }
 
 /*

@@ -1,3 +1,78 @@
+// expansion at raylib/raymathext.d(189)
+T(x*rhs,y*rhs,)
+
+// expansion at raylib/raymathext.d(200)
+T(lhs*x,lhs*y,)
+
+// expansion at raylib/raymathext.d(170)
+T(x+rhs.x,y+rhs.y,)
+
+// expansion at /usr/include/dlang/dmd/core/internal/atomic.d(502)
+
+                asm pure nothrow @nogc @trusted
+                {
+                    mov DL, value;
+                    mov AL, compare;
+
+                    mov RCX, dest;
+                    lock; cmpxchg [RCX], DL;
+
+                    setz success;
+                }
+
+
+// expansion at /usr/include/dlang/dmd/core/internal/atomic.d(502)
+
+                asm pure nothrow @nogc @trusted
+                {
+                    mov DX, value;
+                    mov AX, compare;
+
+                    mov RCX, dest;
+                    lock; cmpxchg [RCX], DX;
+
+                    setz success;
+                }
+
+
+// expansion at /usr/include/dlang/dmd/core/internal/atomic.d(502)
+
+                asm pure nothrow @nogc @trusted
+                {
+                    mov RDX, value;
+                    mov RAX, compare;
+
+                    mov RCX, dest;
+                    lock; cmpxchg [RCX], RDX;
+
+                    setz success;
+                }
+
+
+// expansion at ./lib/namedcounter.d(21)
+__LINE__
+
+// expansion at ./lib/namedcounter.d(12)
+__LINE__
+
+// expansion at ./lib/namedcounter.d(21)
+__LINE__
+
+// expansion at ./lib/namedcounter.d(12)
+__LINE__
+
+// expansion at ./lib/namedcounter.d(21)
+__LINE__
+
+// expansion at ./lib/namedcounter.d(12)
+__LINE__
+
+// expansion at ./lib/namedcounter.d(21)
+__LINE__
+
+// expansion at ./lib/namedcounter.d(12)
+__LINE__
+
 // expansion at ./lib/namedcounter.d(21)
 __LINE__
 
@@ -49,55 +124,55 @@ __LINE__
 // expansion at
 .object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
 
-// expansion at raylib/raymathext.d(91)
+// expansion at raylib/raymathext.d(103)
 T(0,)
 
-// expansion at raylib/raymathext.d(102)
+// expansion at raylib/raymathext.d(114)
 T(1,)
 
 // expansion at
 .object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
 
-// expansion at raylib/raymathext.d(91)
+// expansion at raylib/raymathext.d(103)
 T(0,0,0,)
 
-// expansion at raylib/raymathext.d(102)
+// expansion at raylib/raymathext.d(114)
 T(1,1,1,)
 
 // expansion at
 .object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
 
-// expansion at raylib/raymathext.d(91)
+// expansion at raylib/raymathext.d(103)
 T(0,0,0,0,)
 
-// expansion at raylib/raymathext.d(102)
+// expansion at raylib/raymathext.d(114)
 T(1,1,1,1,)
 
 // expansion at
 .object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
 
-// expansion at raylib/raymathext.d(91)
+// expansion at raylib/raymathext.d(103)
 T(0,0,)
 
-// expansion at raylib/raymathext.d(102)
+// expansion at raylib/raymathext.d(114)
 T(1,1,)
 
 // expansion at
 .object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
 
-// expansion at raylib/raymathext.d(91)
+// expansion at raylib/raymathext.d(103)
 T(0,0,0,)
 
-// expansion at raylib/raymathext.d(102)
+// expansion at raylib/raymathext.d(114)
 T(1,1,1,)
 
 // expansion at
 .object.size_t h = 0;foreach (i, T; typeof(p.tupleof))    static if(is(T* : const(.object.Object)*))         h = h * 33 + typeid(const(.object.Object)).getHash(cast(const void*)&p.tupleof[i]);    else         h = h * 33 + typeid(T).getHash(cast(const void*)&p.tupleof[i]);return h;
 
-// expansion at raylib/raymathext.d(91)
+// expansion at raylib/raymathext.d(103)
 T(0,0,0,0,)
 
-// expansion at raylib/raymathext.d(102)
+// expansion at raylib/raymathext.d(114)
 T(1,1,1,1,)
 
 // expansion at

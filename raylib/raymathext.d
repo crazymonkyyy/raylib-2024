@@ -7,8 +7,22 @@ version(D_BetterC){
 }else{
 	import core.stdc.math:cos,sin,atan2,sqrt;
 }
-import std.traits : FieldNameTuple;
-
+//import std.traits : FieldNameTuple;
+template FieldNameTuple(T)
+{
+    static if (is(T == struct) || is(T == union))
+        alias FieldNameTuple = staticMap!(NameOf, T.tupleof[0 .. $ - isNested!T]);
+    else static if (is(T == class) || is(T == interface))
+        alias FieldNameTuple = staticMap!(NameOf, T.tupleof);
+    else
+        alias FieldNameTuple = AliasSeq!"";
+}
+template staticMap(alias fun, args...)
+{
+    alias staticMap = AliasSeq!();
+    static foreach (arg; args)
+        staticMap = AliasSeq!(staticMap, fun!arg);
+}
 pragma(inline, true):
 
 // Bivector2 type
@@ -75,8 +89,6 @@ alias Matrix4 = Matrix;
 
 mixin template Linear()
 {
-	version(D_BetterC){
-	} else:
     private static alias T = typeof(this);
     private import std.traits : FieldNameTuple;
 

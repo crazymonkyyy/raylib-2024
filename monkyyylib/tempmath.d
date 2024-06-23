@@ -44,6 +44,9 @@ T clamp(T)(auto ref T v,T l,T h){
 	if(v>h)v=h;
 	return v;
 }
+bool between(T,S)(T v,S mn,S mx){
+	return v>=mn && v<=mx;
+}
 //float sin(float x){
 //	import std.math;
 //	return sin(x);
