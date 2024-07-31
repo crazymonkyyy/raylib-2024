@@ -55,14 +55,32 @@ bool between(T,S)(T v,S mn,S mx){
 //	return sin(x-90);
 //}
 
-T warp(T)(T v,T low,T high){//TODO actaully math
-	while(v>=high){
-		v-=high-low;
+//T warp(T)(T v,T low,T high){
+//	while(v>=high){
+//		v-=high-low;
+//	}
+//	while(v<low){
+//		v+=high-low;
+//	}
+//	return v;
+//}
+T warp(T)(T v,T low,T high){
+	if(v>low&&v<=high){
+		return v;
 	}
-	while(v<low){
-		v+=high-low;
+	if(v>=high){
+		v-=low;
+		T high_=high-low;
+		return v%high_+low;
+	} else {
+		v-=low;
+		T high_=high-low;
+		T temp= v%high_+low+high_;
+		if(temp==low){
+			return high;
+		}
+		return temp;
 	}
-	return v;
 }
 int floor(float f){
 	return cast(int)f;
