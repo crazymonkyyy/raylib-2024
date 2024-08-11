@@ -1,3 +1,9 @@
+alias seq(T...)=T;
+struct tuple(T...){
+	T expand; alias expand this;
+}
+auto pair(A,B)(A a,B b)=>tuple!(A,B)(a,b);
+
 auto mixinmap(string front_,string body_="",R,Args...)(R r,Args args){
 	struct range{
 		R r;
@@ -182,4 +188,8 @@ auto array(R)(R r){
 	}
 	return data;
 }
-
+/*
+auto front(T)(T[] r)=>r[0];
+void popFront(T)(ref T[] r)=>r=r[1..$];
+bool empty(T)(T[] r)=>r.length==0;
+*/

@@ -8,6 +8,9 @@ version(D_BetterC){
 	import core.stdc.math:cos,sin,atan2,sqrt;
 }
 //import std.traits : FieldNameTuple;
+alias AliasSeq(T...)=T;
+enum isNested(T) = __traits(isNested, T);
+enum NameOf(alias T) = T.stringof;
 template FieldNameTuple(T)
 {
     static if (is(T == struct) || is(T == union))
@@ -230,7 +233,7 @@ unittest
 
 //import std.algorithm : map;
 //import std.range : join;
-
+*/
 float length(T)(T v)
 {
     enum fragment = () {
@@ -246,7 +249,7 @@ T normal(T)(T v)
 {
     return v / v.length;
 }
-
+/*
 float distance(T)(T lhs, T rhs)
 {
     return (lhs - rhs).length;

@@ -24,6 +24,7 @@ public import staticabstractions;
 public import debugsystem;
 public import staticsizedata;
 public import fileio;
+public import myalgorithms;
 void makewindow(){
 	activecolorscheme=solarizeddark;
 	version(D_BetterC){
